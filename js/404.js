@@ -212,7 +212,7 @@ tsParticles.load("tsparticles", {
           value: 40
         },
         move: {
-          speed: 40,
+          speed: 10,
           outModes: {
             default: "destroy",
             left: "none"
