@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main() {
+
+    setlocale (LC_ALL, "portuguese");
+    char x;
+    printf("\n M = Média final");
+    printf("\n E = Eleitores\n \n >  ");
+    scanf("%c", &x);
+    if (x == 'm') {
+
+        media();
+    }
+
+    if (x == 'e') {
+
+        eleicao();
+    }
+}
+
+int media() {
+
+
+    float v1, v2, v3, mf;
+    printf("\n \nNota 1: \n");
+    scanf("%f", &v1);
+
+    printf("Nota 2: \n");
+    scanf("%f", &v2);
+
+    printf("Nota 3: \n");
+    scanf("%f", &v3);
+
+    printf("\n \nN1: %.0f\nN2: %.0f\nN3: %.0f\n \n \n", v1, v2, v3);
+    mf = (v1+v2+v3)/3;
+    printf("M: %.0f\n \n", mf);
+
+
+}
+
+int eleicao() {
+
+    int eleitores, nulo, branco, valido;
+
+    printf("\nDigite o número de eleitores: \n");
+    scanf("%i", &eleitores);
+
+    printf("\nDigite os votos válidos: \n");
+    scanf("%i", &valido);
+
+    printf("\nDigite os votos nulos: \n");
+    scanf("%i", &nulo);
+
+    printf("\nDigite os votos em branco: \n");
+    scanf("%i", &branco);
+
+    printf("\n \nNúmero de eleitores: %i", eleitores);
+
+    float n, b, v;
+    v = (valido*100)/eleitores;
+    printf("\n \nVotos válidos: %.2f%%", v);
+
+    n = (nulo*100)/eleitores;
+    printf("\n \nVotos nulos: %.2f%%", n);
+
+    b = (branco*100)/eleitores;
+    printf("\n \nVotos em branco: %.2f%%\n \n", b);
+
+
+
+
+
+
+
+
+
+
+
+}
