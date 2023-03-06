@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Gilberto Morales">
+    <meta name="description" content="Site criado para portifólio.">
+    <title>Morales</title>
+    <link rel="shortcut icon" href=favicon.png/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="container-fluid photo" id="top">
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <img src="img/profile.jpg">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid title">
+            <div class="row">
+                <div class="col">
+                    <h1>Morales :)</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bio">
+            <div class="row">
+                <div class="col">
+                    <p>Um linktree diferenciado.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid links">
+            <div class="row">
+                <div class="col">
+                    <a href="quack.webm" target="_blank" class="botao">
+                        <p>Quack!</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid social">
+            <div class="row">
+                <div class="col">
+                    <ul>
+						<li><a href="https://discord.gg/ZBpVePUQ2w" target="_blank"><i class="bi bi-discord" style="font-size: 2rem;" title="Discord"></i></a></li>
+                        <li><a href="https://www.instagram.com/gilbertomrls/" target="_blank"><i class="bi bi-instagram" style="font-size: 2rem;" title="Instagram"></i></a></li>
+						<li><a href="https://twitter.com/morasjdjwhsndnd?s=11&t=XfQW7jAzZyw-CHXIBh0waA" target="_blank"><i class="bi bi-twitter" style="font-size: 2rem;" title="Twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+    <script src="js/bootstrap.js"></script>
+</html>
