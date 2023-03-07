@@ -1,135 +1,175 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <locale.h>
-#define pi 3.1459
+    #include <stdio.h>
+    #include <string.h>
+    #include <stdlib.h>
+    #include <locale.h>
+    #include <math.h>
+    #define pi 3.1459
 
-int main() {
+    int main() {
 
-    setlocale (LC_ALL, "portuguese");
+        setlocale (LC_ALL, "portuguese");
 
-    char x;
+        char x;
 
-    printf("\n A = Área");
-    printf("\n M = Média final");
-    printf("\n T = Tamanho em bytes");
-    printf("\n P = Problema resolvido");
-    printf("\n E = Eleitores\n \n >  ");
-    scanf("%c", &x);
+        printf("\n A = Área");
+        printf("\n F = Fórmula de bháskara");
+        printf("\n M = Média final");
+        printf("\n T = Tamanho em bytes");
+        printf("\n P = Problema resolvido");
+        printf("\n E = Eleitores\n \n >  ");
+        scanf("%c", &x);
 
-    if (x == 'm') {
+        if (x == 'm') {
 
-        media();
+            media();
+        }
+
+        if (x == 'e') {
+
+            eleicao();
+        }
+
+        if (x == 't') {
+
+            tamanho();
+        }
+
+        if (x == 'p') {
+
+            problema();
+            return;
+        }
+
+        if (x == 'a') {
+
+            area();
+
+        }
+
+        if (x == 'f') {
+
+            bhaskara();
+
+        }
+
+        return(0);
+
     }
 
-    if (x == 'e') {
+    int bhaskara() {
 
-        eleicao();
+        float delta, x1, x2, a, b, c;
+        printf("\n \nDigite o valor do A.\n>  ");
+        scanf("%f", &a);
+        printf("\n \nDigite o valor do B.\n>  ");
+        scanf("%f", &b);
+        printf("\n \nDigite o valor do C.\n>  ");
+        scanf("%f", &c);
+
+        delta = b*b - 4*a*c;
+        x1 = (-b + sqrt(delta)) / (2*a);
+        x2 = (-b - sqrt(delta)) / (2*a);
+
+        if(delta < 0) {
+
+            printf("Esta equação não possui raizes reais.");
+
+        } else {
+
+            printf("x1: %.2fn", x1);
+            printf("x2: %.2fn", x2);
+
+        }
+
+        return(0);
+
     }
 
-    if (x == 't') {
+    int problema() {
 
-        tamanho();
+        int a, b;
+        float c, d;
+        a = 3;
+        b = a * 3;
+        c = b / 2;
+        d = a + c;
+        d = c - (d/2) + c * d;
+        c = a % 2;
+        c = c + d;
+        printf("\n \n \nValor de C: %.2f \n \n \n", c);
+
     }
+    int area() {
 
-    if (x == 'p') {
+        float a, r;
 
-        problema();
+        printf("\n \nDigite o valor do raio.\n>  ");
+        scanf("%f", &r);
+
+
+        a = pi*r*r;
+        printf("\n \nÁrea do círculo: %.0f \n \n", a);
+
         return;
-    }
-
-    if (x == 'a') {
-
-        area();
 
     }
-
-}
-
-int problema() {
-
-    int a, b;
-    float c, d;
-    a = 3;
-    b = a * 3;
-    c = b / 2;
-    d = a + c;
-    d = c - (d/2) + c * d;
-    c = a % 2;
-    c = c + d;
-    printf("\n \n \nValor de C: %.2f \n \n \n", c);
-
-}
-int area() {
-
-    float a, r;
-
-    printf("\n \nDigite o valor do raio.\n>  ");
-    scanf("%f", &r);
+    int tamanho() {
 
 
-    a = pi*r*r;
-    printf("\n \nÁrea do círculo: %.0f \n \n", a);
+        printf("\nEsta informação utiliza %d bytes.\n", sizeof(int));
+        main();
+        return;
 
-    return;
+    }
 
-}
-int tamanho() {
-
-
-    printf("\nEsta informação utiliza %d bytes.\n", sizeof(int));
-    main();
-    return;
-
-}
-int media() {
+    int media() {
 
 
-    float v1, v2, v3, mf;
-    printf("\n \nNota 1: \n");
-    scanf("%f", &v1);
+        float v1, v2, v3, mf;
+        printf("\n \nNota 1: \n");
+        scanf("%f", &v1);
 
 
-    printf("Nota 2: \n");
-    scanf("%f", &v2);
+        printf("Nota 2: \n");
+        scanf("%f", &v2);
 
-    printf("Nota 3: \n");
-    scanf("%f", &v3);
+        printf("Nota 3: \n");
+        scanf("%f", &v3);
 
-    printf("\n \nN1: %.0f\nN2: %.0f\nN3: %.0f\n \n \n", v1, v2, v3);
-    mf = (v1+v2+v3)/3;
-    printf("M: %.0f\n \n", mf);
-
-
-}
-
-int eleicao() {
-
-    int eleitores, nulo, branco, valido;
-
-    printf("\nDigite o número de eleitores: \n");
-    scanf("%i", &eleitores);
-
-    printf("\nDigite os votos válidos: \n");
-    scanf("%i", &valido);
-
-    printf("\nDigite os votos nulos: \n");
-    scanf("%i", &nulo);
-
-    printf("\nDigite os votos em branco: \n");
-    scanf("%i", &branco);
-
-    printf("\n \nNúmero de eleitores: %i", eleitores);
-
-    float n, b, v;
-    v = (valido*100)/eleitores;
-    printf("\n \nVotos válidos: %.2f%%", v);
-
-    n = (nulo*100)/eleitores;
-    printf("\n \nVotos nulos: %.2f%%", n);
-
-    b = (branco*100)/eleitores;
-    printf("\n \nVotos em branco: %.2f%%\n \n", b);
+        printf("\n \nN1: %.0f\nN2: %.0f\nN3: %.0f\n \n \n", v1, v2, v3);
+        mf = (v1+v2+v3)/3;
+        printf("M: %.0f\n \n", mf);
 
 
-}
+    }
+
+    int eleicao() {
+
+        int eleitores, nulo, branco, valido;
+
+        printf("\nDigite o número de eleitores: \n");
+        scanf("%i", &eleitores);
+
+        printf("\nDigite os votos válidos: \n");
+        scanf("%i", &valido);
+
+        printf("\nDigite os votos nulos: \n");
+        scanf("%i", &nulo);
+
+        printf("\nDigite os votos em branco: \n");
+        scanf("%i", &branco);
+
+        printf("\n \nNúmero de eleitores: %i", eleitores);
+
+        float n, b, v;
+        v = (valido*100)/eleitores;
+        printf("\n \nVotos válidos: %.2f%%", v);
+
+        n = (nulo*100)/eleitores;
+        printf("\n \nVotos nulos: %.2f%%", n);
+
+        b = (branco*100)/eleitores;
+        printf("\n \nVotos em branco: %.2f%%\n \n", b);
+
+
+    }
