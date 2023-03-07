@@ -2,12 +2,15 @@
 #include <string.h>
 #include <stdlib.h>
 #include <locale.h>
+#define pi 3.1459
 
 int main() {
 
     setlocale (LC_ALL, "portuguese");
     char x;
+    printf("\n A = Área");
     printf("\n M = Média final");
+    printf("\n T = Tamanho em bytes");
     printf("\n E = Eleitores\n \n >  ");
     scanf("%c", &x);
     if (x == 'm') {
@@ -19,14 +22,48 @@ int main() {
 
         eleicao();
     }
+
+    if (x == 't') {
+
+        tamanho();
+    }
+
+    if (x == 'a') {
+
+        area();
+    }
+
 }
 
+int area() {
+
+    float a, r;
+
+    printf("\n \nDigite o valor do raio.\n>  ");
+    scanf("%f", &r);
+
+
+    a = pi*r*r;
+    printf("\n \nÁrea do círculo: %.0f \n \n", a);
+
+    return;
+
+}
+int tamanho() {
+
+
+    printf("\nEsta informação utiliza %d bytes.\n", sizeof(int));
+    main();
+    return;
+
+}
 int media() {
 
 
     float v1, v2, v3, mf;
     printf("\n \nNota 1: \n");
     scanf("%f", &v1);
+
 
     printf("Nota 2: \n");
     scanf("%f", &v2);
@@ -68,15 +105,6 @@ int eleicao() {
 
     b = (branco*100)/eleitores;
     printf("\n \nVotos em branco: %.2f%%\n \n", b);
-
-
-
-
-
-
-
-
-
 
 
 }
