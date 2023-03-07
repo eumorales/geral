@@ -7,12 +7,16 @@
 int main() {
 
     setlocale (LC_ALL, "portuguese");
+
     char x;
+
     printf("\n A = Área");
     printf("\n M = Média final");
     printf("\n T = Tamanho em bytes");
+    printf("\n P = Problema resolvido");
     printf("\n E = Eleitores\n \n >  ");
     scanf("%c", &x);
+
     if (x == 'm') {
 
         media();
@@ -28,13 +32,34 @@ int main() {
         tamanho();
     }
 
+    if (x == 'p') {
+
+        problema();
+        return;
+    }
+
     if (x == 'a') {
 
         area();
+
     }
 
 }
 
+int problema() {
+
+    int a, b;
+    float c, d;
+    a = 3;
+    b = a * 3;
+    c = b / 2;
+    d = a + c;
+    d = c - (d/2) + c * d;
+    c = a % 2;
+    c = c + d;
+    printf("\n \n \nValor de C: %.2f \n \n \n", c);
+
+}
 int area() {
 
     float a, r;
